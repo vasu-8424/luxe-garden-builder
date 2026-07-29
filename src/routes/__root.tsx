@@ -83,13 +83,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: BRAND.name },
       { property: "og:site_name", content: BRAND.name },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://luxe-garden-builder.vercel.app/" },
       { property: "og:title", content: "RR Heaven Gardenblr — Luxury Architectural Horticulture & Nursery Studio" },
       {
         property: "og:description",
         content:
           "Bengaluru's premier landscape architecture, acclimatised plant nursery and bio-wall studio in Rajarajeshwari Nagar. 15+ years, 5,000+ luxury spaces transformed.",
       },
-      { property: "og:image", content: "https://luxe-garden-builder.vercel.app/og-image.png" },
+      { property: "og:image", content: "https://luxe-garden-builder.vercel.app/og-image.png?v=3" },
+      { property: "og:image:secure_url", content: "https://luxe-garden-builder.vercel.app/og-image.png?v=3" },
+      { property: "og:image:type", content: "image/png" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -99,15 +102,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Bengaluru's premier landscape architecture, acclimatised plant nursery and bio-wall studio in Rajarajeshwari Nagar. 15+ years, 5,000+ luxury spaces transformed.",
       },
-      { name: "twitter:image", content: "https://luxe-garden-builder.vercel.app/og-image.png" },
+      { name: "twitter:image", content: "https://luxe-garden-builder.vercel.app/og-image.png?v=3" },
       { name: "theme-color", content: "#143A2C" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
-      { rel: "icon", href: "/favicon.png", type: "image/png" },
-      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+      { rel: "icon", href: "/favicon.svg?v=3", type: "image/svg+xml" },
+      { rel: "icon", href: "/favicon.ico?v=3", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.png?v=3", type: "image/png" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png?v=3" },
     ],
     scripts: [
       {

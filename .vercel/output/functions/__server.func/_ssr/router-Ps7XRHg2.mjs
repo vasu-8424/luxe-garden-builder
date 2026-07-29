@@ -5,7 +5,7 @@ import { r as AnimatePresence } from "../_libs/framer-motion.mjs";
 import { t as motion } from "../_libs/motion.mjs";
 import { r as NAV_LINKS, t as BRAND } from "./site-Dze4VZx_.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-CBErnbAA.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-Ps7XRHg2.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var styles_default = "/assets/styles-BNTA7YB2.css";
@@ -652,6 +652,10 @@ var Route$11 = createRootRouteWithContext()({
 				content: "website"
 			},
 			{
+				property: "og:url",
+				content: "https://luxe-garden-builder.vercel.app/"
+			},
+			{
 				property: "og:title",
 				content: "RR Heaven Gardenblr — Luxury Architectural Horticulture & Nursery Studio"
 			},
@@ -661,7 +665,15 @@ var Route$11 = createRootRouteWithContext()({
 			},
 			{
 				property: "og:image",
-				content: "https://luxe-garden-builder.vercel.app/og-image.png"
+				content: "https://luxe-garden-builder.vercel.app/og-image.png?v=3"
+			},
+			{
+				property: "og:image:secure_url",
+				content: "https://luxe-garden-builder.vercel.app/og-image.png?v=3"
+			},
+			{
+				property: "og:image:type",
+				content: "image/png"
 			},
 			{
 				property: "og:image:width",
@@ -685,7 +697,7 @@ var Route$11 = createRootRouteWithContext()({
 			},
 			{
 				name: "twitter:image",
-				content: "https://luxe-garden-builder.vercel.app/og-image.png"
+				content: "https://luxe-garden-builder.vercel.app/og-image.png?v=3"
 			},
 			{
 				name: "theme-color",
@@ -699,22 +711,22 @@ var Route$11 = createRootRouteWithContext()({
 			},
 			{
 				rel: "icon",
-				href: "/favicon.svg",
+				href: "/favicon.svg?v=3",
 				type: "image/svg+xml"
 			},
 			{
 				rel: "icon",
-				href: "/favicon.ico",
+				href: "/favicon.ico?v=3",
 				type: "image/x-icon"
 			},
 			{
 				rel: "icon",
-				href: "/favicon.png",
+				href: "/favicon.png?v=3",
 				type: "image/png"
 			},
 			{
 				rel: "apple-touch-icon",
-				href: "/apple-touch-icon.png"
+				href: "/apple-touch-icon.png?v=3"
 			}
 		],
 		scripts: [{
