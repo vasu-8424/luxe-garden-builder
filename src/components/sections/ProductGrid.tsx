@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { Reveal } from "@/components/site/Reveal";
 import { LuxLink } from "@/components/site/LuxButton";
 import { PRODUCTS, type Product } from "@/lib/catalog";
+import { ImageEnquiryModal, type ImageEnquiryItem } from "@/components/sections/ImageEnquiryModal";
 
-function Card({ p, index }: { p: Product; index: number }) {
+function Card({ p, index, onSelect }: { p: Product; index: number; onSelect: (p: Product) => void }) {
   const spanClass =
     p.span === "tall"
       ? "md:row-span-2 aspect-[3/4] md:aspect-auto md:min-h-[42rem]"
@@ -12,7 +14,11 @@ function Card({ p, index }: { p: Product; index: number }) {
 
   return (
     <Reveal delay={(index % 3) * 0.08} className={spanClass}>
-      <article className="media-zoom group relative h-full w-full overflow-hidden bg-forest-deep">
+      <button
+        type="button"
+        onClick={() => onSelect(p)}
+        className="media-zoom group relative h-full w-full overflow-hidden bg-forest-deep text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-gold"
+      >
         <img
           src={p.image}
           alt={`${p.title} available at RR Heaven Gardenblr, Bengaluru`}
@@ -22,14 +28,17 @@ function Card({ p, index }: { p: Product; index: number }) {
         <div className="scrim-bottom absolute inset-0 opacity-90 transition-opacity duration-700 group-hover:opacity-100" />
 
         <div className="absolute inset-x-0 bottom-0 p-7 md:p-8">
-          <h3 className="font-display text-2xl text-on-dark md:text-[1.7rem]">{p.title}</h3>
+          <span className="text-[0.65rem] tracking-[0.2em] uppercase text-gold/90 font-mono">
+            {p.category}
+          </span>
+          <h3 className="font-display text-2xl text-on-dark md:text-[1.7rem] mt-1">{p.title}</h3>
           <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-700 ease-[cubic-bezier(.22,1,.36,1)] group-hover:grid-rows-[1fr]">
             <div className="overflow-hidden">
               <p className="pt-3 max-w-sm text-sm leading-relaxed text-stone/75">{p.copy}</p>
             </div>
           </div>
-          <span className="mt-5 flex items-center gap-3 text-[0.68rem] tracking-[0.2em] text-gold uppercase">
-            Enquire
+          <span className="mt-5 inline-flex items-center gap-3 text-[0.68rem] tracking-[0.2em] text-gold uppercase font-mono font-semibold border-b border-gold/40 pb-1 group-hover:border-gold transition-colors">
+            Enquire & View Details
             <svg
               width="18"
               height="8"
@@ -42,7 +51,7 @@ function Card({ p, index }: { p: Product; index: number }) {
             </svg>
           </span>
         </div>
-      </article>
+      </button>
     </Reveal>
   );
 }
@@ -54,7 +63,19 @@ export function ProductGrid({
   limit?: number;
   showHeading?: boolean;
 }) {
+  const [selectedProduct, setSelectedProduct] = useState<ImageEnquiryItem | null>(null);
   const items = limit ? PRODUCTS.slice(0, limit) : PRODUCTS;
+
+  const handleSelect = (p: Product) => {
+    setSelectedProduct({
+      title: p.title,
+      category: p.category,
+      image: p.image,
+      description: p.copy,
+      specs: p.specs,
+      points: p.careGuide,
+    });
+  };
 
   return (
     <section className="bg-background py-24 md:py-36">
@@ -68,15 +89,14 @@ export function ProductGrid({
               </h2>
             </div>
             <p className="body-lux max-w-sm md:text-right">
-              Everything we stock is acclimatised in our Bengaluru nursery before it
-              reaches your home.
+              Click any image to view architectural specs and send an instant inquiry directly on WhatsApp.
             </p>
           </Reveal>
         )}
 
         <div className="grid auto-rows-[minmax(0,1fr)] gap-4 md:grid-cols-3 md:gap-5">
           {items.map((p, i) => (
-            <Card key={p.title} p={p} index={i} />
+            <Card key={p.title} p={p} index={i} onSelect={handleSelect} />
           ))}
         </div>
 
@@ -88,6 +108,11 @@ export function ProductGrid({
           </Reveal>
         )}
       </div>
+
+      <ImageEnquiryModal
+        item={selectedProduct}
+        onClose={() => setSelectedProduct(null)}
+      />
     </section>
   );
 }

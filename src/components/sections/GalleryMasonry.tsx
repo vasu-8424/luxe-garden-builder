@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { useState } from "react";
 import { Reveal } from "@/components/site/Reveal";
 import { GALLERY, GALLERY_CATEGORIES, type GalleryItem } from "@/lib/catalog";
+import { ImageEnquiryModal, type ImageEnquiryItem } from "@/components/sections/ImageEnquiryModal";
 
 const ratioClass: Record<GalleryItem["ratio"], string> = {
   tall: "aspect-[3/4]",
@@ -11,20 +11,23 @@ const ratioClass: Record<GalleryItem["ratio"], string> = {
 
 export function GalleryMasonry({ filters = true }: { filters?: boolean }) {
   const [active, setActive] = useState("All");
-  const [lightbox, setLightbox] = useState<GalleryItem | null>(null);
+  const [selectedItem, setSelectedItem] = useState<ImageEnquiryItem | null>(null);
 
   const items = active === "All" ? GALLERY : GALLERY.filter((g) => g.category === active);
 
-  useEffect(() => {
-    if (!lightbox) return;
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setLightbox(null);
-    window.addEventListener("keydown", onKey);
-    document.body.style.overflow = "hidden";
-    return () => {
-      window.removeEventListener("keydown", onKey);
-      document.body.style.overflow = "";
-    };
-  }, [lightbox]);
+  const handleOpenInquiry = (g: GalleryItem) => {
+    setSelectedItem({
+      title: g.title,
+      category: g.category,
+      image: g.image,
+      description: g.description || `Architectural garden installation crafted by RR Heaven Gardenblr for ${g.category} spaces in Bengaluru.`,
+      specs: g.specs || [
+        { label: "Category", value: g.category },
+        { label: "Execution", value: "RR Heaven Gardenblr Master Team" },
+        { label: "Location", value: "Bengaluru, Karnataka" },
+      ],
+    });
+  };
 
   return (
     <section className="bg-background py-24 md:py-36">
@@ -36,19 +39,22 @@ export function GalleryMasonry({ filters = true }: { filters?: boolean }) {
               A portfolio measured in mornings, not photographs.
             </h2>
           </div>
+          <p className="body-lux max-w-sm text-sm md:text-right">
+            Click any gallery image to open full details and enquire directly on WhatsApp.
+          </p>
         </Reveal>
 
         {filters && (
-          <Reveal className="mb-12 flex flex-wrap gap-x-8 gap-y-3">
+          <Reveal className="mb-12 flex flex-wrap gap-x-8 gap-y-3 border-b border-foreground/10 pb-4">
             {GALLERY_CATEGORIES.map((c) => (
               <button
                 key={c}
                 type="button"
                 onClick={() => setActive(c)}
-                className={`text-[0.7rem] tracking-[0.2em] uppercase transition-colors duration-500 ${
+                className={`text-[0.7rem] tracking-[0.2em] uppercase font-mono transition-colors duration-300 py-1 ${
                   active === c
-                    ? "text-gold"
-                    : "text-foreground/45 hover:text-forest"
+                    ? "text-gold border-b-2 border-gold font-bold"
+                    : "text-foreground/50 hover:text-forest"
                 }`}
               >
                 {c}
@@ -62,8 +68,8 @@ export function GalleryMasonry({ filters = true }: { filters?: boolean }) {
             <Reveal key={`${g.title}-${i}`} delay={(i % 3) * 0.06}>
               <button
                 type="button"
-                onClick={() => setLightbox(g)}
-                className="media-zoom group relative block w-full overflow-hidden bg-forest-deep text-left"
+                onClick={() => handleOpenInquiry(g)}
+                className="media-zoom group relative block w-full overflow-hidden bg-forest-deep text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-gold"
               >
                 <div className={ratioClass[g.ratio]}>
                   <img
@@ -73,10 +79,15 @@ export function GalleryMasonry({ filters = true }: { filters?: boolean }) {
                     className="h-full w-full object-cover"
                   />
                 </div>
-                <div className="scrim-bottom absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
-                <div className="absolute inset-x-0 bottom-0 translate-y-3 p-6 opacity-0 transition-all duration-700 group-hover:translate-y-0 group-hover:opacity-100">
-                  <p className="eyebrow text-gold">{g.category}</p>
-                  <p className="mt-3 font-display text-xl text-on-dark">{g.title}</p>
+                <div className="scrim-bottom absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="absolute inset-x-0 bottom-0 translate-y-3 p-6 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 flex justify-between items-end">
+                  <div>
+                    <p className="eyebrow text-gold font-mono">{g.category}</p>
+                    <p className="mt-2 font-display text-xl text-on-dark">{g.title}</p>
+                  </div>
+                  <span className="bg-gold/90 text-black text-[0.65rem] uppercase tracking-widest px-3 py-1.5 font-mono font-bold">
+                    Enquire
+                  </span>
                 </div>
               </button>
             </Reveal>
@@ -84,49 +95,10 @@ export function GalleryMasonry({ filters = true }: { filters?: boolean }) {
         </div>
       </div>
 
-      <AnimatePresence>
-        {lightbox && (
-          <motion.div
-            className="fixed inset-0 z-[90] flex items-center justify-center bg-forest-deep/95 p-5 backdrop-blur-sm"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setLightbox(null)}
-            role="dialog"
-            aria-modal="true"
-            aria-label={lightbox.title}
-          >
-            <button
-              type="button"
-              onClick={() => setLightbox(null)}
-              aria-label="Close image"
-              className="absolute top-6 right-6 flex h-11 w-11 items-center justify-center border border-on-dark/25 text-on-dark"
-            >
-              <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true">
-                <path d="M1 1l14 14M15 1L1 15" stroke="currentColor" strokeWidth="1.2" />
-              </svg>
-            </button>
-            <motion.figure
-              className="max-h-[86vh] max-w-5xl"
-              initial={{ scale: 0.96, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.97, opacity: 0 }}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <img
-                src={lightbox.image}
-                alt={lightbox.title}
-                className="max-h-[76vh] w-full object-contain"
-              />
-              <figcaption className="mt-5 flex items-center justify-between text-on-dark">
-                <span className="font-display text-lg">{lightbox.title}</span>
-                <span className="eyebrow text-gold">{lightbox.category}</span>
-              </figcaption>
-            </motion.figure>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <ImageEnquiryModal
+        item={selectedItem}
+        onClose={() => setSelectedItem(null)}
+      />
     </section>
   );
 }

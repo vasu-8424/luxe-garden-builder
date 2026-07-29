@@ -44,62 +44,145 @@ export type Product = {
   title: string;
   copy: string;
   image: string;
+  category: string;
   span?: "wide" | "tall";
+  specs: { label: string; value: string }[];
+  careGuide?: string[];
 };
 
 export const PRODUCTS: Product[] = [
   {
-    title: "Indoor Plants",
-    copy: "Sculptural foliage selected for Indian interiors and low-light rooms.",
+    title: "Indoor Statement Plants",
+    category: "Indoor Botanical",
+    copy: "Sculptural Monstera, Fiddle Leaf Figs and Snake Plants acclimatised for Indian luxury interiors and low-light suites.",
     image: pIndoor,
     span: "tall",
+    specs: [
+      { label: "Light Requirement", value: "Filtered / Medium Light" },
+      { label: "Water Frequency", value: "Once per 5-7 Days" },
+      { label: "Air Purifying", value: "Grade A+ Formaldehyde Filter" },
+      { label: "Nursery Acclimatisation", value: "3 Months at RR Nagar Nursery" },
+    ],
+    careGuide: [
+      "Wipe leaves bi-weekly with organic neem extract solution",
+      "Ensure proper drainage in glazed ceramic or granite planters",
+      "Do not expose to direct harsh afternoon sun rays",
+    ],
   },
   {
-    title: "Outdoor Plants",
-    copy: "Palms, ornamentals and hedging grown for Bengaluru's climate.",
+    title: "Outdoor Architectural Palms & Shrubs",
+    category: "Outdoor Landscape",
+    copy: "Areca Palms, Traveler's Palms, Ficus and flowering hedging grown to resist Bengaluru monsoons and dry summers.",
     image: pOutdoor,
+    specs: [
+      { label: "Light Requirement", value: "Full Sun / Bright Outdoor" },
+      { label: "Growth Habit", value: "Upright Architectural Form" },
+      { label: "Drought Tolerance", value: "High (Once Established)" },
+      { label: "Soil Type", value: "Enriched Red Earth & Cocopeat" },
+    ],
+    careGuide: [
+      "Water thoroughly early morning",
+      "Apply enriched vermicompost quarterly",
+      "Prune dead fronds twice a year",
+    ],
   },
   {
-    title: "Ceramic Pots",
-    copy: "Hand-glazed planters in cream, olive and stone finishes.",
+    title: "Hand-Glazed Artisan Ceramic Pots",
+    category: "Planter Collection",
+    copy: "Hand-turned luxury ceramic planters in matte cream, moss olive, terracotta and charcoal stone glazes.",
     image: pCeramic,
+    specs: [
+      { label: "Material", value: "Double-Fired High Ceramic" },
+      { label: "Finish", value: "Hand-Glazed Matte & Textured" },
+      { label: "Drainage", value: "Pre-drilled with mesh filter" },
+      { label: "Sizes Available", value: '8" to 28" Diameter' },
+    ],
   },
   {
-    title: "Plastic Pots",
-    copy: "Lightweight, UV-stable planters for terraces and balconies.",
+    title: "UV-Stabilized Architectural Poly Planters",
+    category: "Terrace & Balcony Pots",
+    copy: "Lightweight, unbreakable UV-stable planters engineered for rooftop decks, balconies and modern high-rises.",
     image: g3,
+    specs: [
+      { label: "Material", value: "UV-Stabilized Fiber Polymer" },
+      { label: "Weight", value: "70% Lighter than Stone" },
+      { label: "Weather Proof", value: "-10°C to +55°C UV Stable" },
+      { label: "Warranty", value: "5-Year Fade & Crack Guarantee" },
+    ],
   },
   {
-    title: "Granite Fibre Pots",
-    copy: "Stone-textured, weather-proof planters at architectural scale.",
+    title: "Granite Fibre Monolith Planters",
+    category: "Enterprise Planters",
+    copy: "Architectural monolithic planters crafted from basalt fibre and stone powder, suited for grand villa entrances.",
     image: g2,
     span: "wide",
+    specs: [
+      { label: "Structure", value: "Engineered Granite Fibre Monolith" },
+      { label: "Aesthetic", value: "Minimalist Architectural Concrete Finish" },
+      { label: "Load Capacity", value: "High Impact & Root Pressure Tolerant" },
+      { label: "Ideal For", value: "Villa Entrances, Commercial Atriums" },
+    ],
   },
   {
-    title: "Decorative Plant Stands",
-    copy: "Teak and blackened-metal stands that lift greenery into the room.",
+    title: "Teak & Blackened Steel Plant Stands",
+    category: "Interior Accessories",
+    copy: "Precision-milled seasoned teakwood and powder-coated matte black iron stands that lift botanical greenery into sightlines.",
     image: pStands,
+    specs: [
+      { label: "Material", value: "Grade-A Seasoned Teak & Alloy Steel" },
+      { label: "Rust Protection", value: "Dual Powder Coat Finish" },
+      { label: "Max Weight", value: "Up to 85 kg Planter Weight" },
+      { label: "Handcrafted In", value: "Bengaluru Master Workshop" },
+    ],
   },
   {
-    title: "Hanging Pots",
-    copy: "Suspended planting for balconies, courtyards and atria.",
+    title: "Suspended Vertical & Hanging Pots",
+    category: "Balcony Verticals",
+    copy: "Heavy-duty brass and macrame suspended planters designed for courtyard atriums, balconies and terrace beams.",
     image: g1,
     span: "tall",
+    specs: [
+      { label: "Hanger Material", value: "Solid Brass / Weather Rope" },
+      { label: "Planter Pot", value: "Terracotta & Lightweight Composite" },
+      { label: "Drip Tray", value: "Integrated Concealed Tray" },
+      { label: "Ideal Plants", value: "Philodendron, Pothos, Ferns" },
+    ],
   },
   {
-    title: "Organic Manure",
-    copy: "Vermicompost and enriched blends for long-term soil health.",
+    title: "Enriched Bio Vermicompost & Soil Manure",
+    category: "Organic Soil Health",
+    copy: "Aged vermicompost enriched with bio-char, neem cake, humic acid and micronutrients for vigorous root establishment.",
     image: sMaintenance,
+    specs: [
+      { label: "Composition", value: "100% Organic Earthworm Castings" },
+      { label: "Additives", value: "Neem Cake + Seaweed Extract" },
+      { label: "NPK Ratio", value: "Balanced Slow Release" },
+      { label: "Pack Sizes", value: "5 kg, 25 kg, 50 kg & Bulk Tons" },
+    ],
   },
   {
-    title: "Cocopeat",
-    copy: "Graded, washed cocopeat blocks for potting and propagation.",
+    title: "Washed & Graded Hydro-Cocopeat",
+    category: "Substrate & Medium",
+    copy: "Low-EC washed coconut coir pith blocks for optimal moisture retention, propagation and root aeration.",
     image: g6,
+    specs: [
+      { label: "EC Value", value: "< 0.5 mS/cm (Fully Washed)" },
+      { label: "pH Range", value: "5.8 – 6.5 (Ideal Botanical)" },
+      { label: "Expansion", value: "1 kg expands to 15 Litres" },
+      { label: "Dust Filtered", value: "Triple Sieved Clean Fiber" },
+    ],
   },
   {
-    title: "Organic Plant Protection",
-    copy: "Neem-based and biological solutions — effective, chemical-light.",
+    title: "Biological Plant Protection & Neem Oils",
+    category: "Organic Pest Care",
+    copy: "Cold-pressed high-azadirachtin neem extract and botanical spray formulas to eradicate pests without toxic chemicals.",
     image: g5,
+    specs: [
+      { label: "Active Ingredient", value: "Cold Pressed Neem Extract" },
+      { label: "Safety", value: "100% Pet & Child Safe" },
+      { label: "Targets", value: "Mealybugs, Aphids, Spider Mites" },
+      { label: "Application", value: "Foliar Spray Every 14 Days" },
+    ],
   },
 ];
 
@@ -108,56 +191,105 @@ export type Service = {
   copy: string;
   image: string;
   points: string[];
+  specs: { label: string; value: string }[];
 };
 
 export const SERVICES: Service[] = [
   {
-    title: "Indoor Garden Setup",
-    copy: "Living walls, atrium planting and statement foliage composed around your interior palette, with light mapping and irrigation planned before a single pot is placed.",
+    title: "Indoor Garden & Living Wall Setup",
+    copy: "Hydroponic & substrate living walls, atrium statement trees and foliage curated to match your interior lighting and microclimate.",
     image: sIndoor,
-    points: ["Light & humidity study", "Planter specification", "Installation & styling"],
+    points: ["Light intensity mapping & lux audit", "Automated drip irrigation & sensor setup", "Complimentary 3-month plant mortality warranty"],
+    specs: [
+      { label: "Site Inspection", value: "Complimentary across Bengaluru" },
+      { label: "Turnaround", value: "3 to 7 Days Execution" },
+      { label: "Irrigation", value: "Automated Drip / Micro Sprinkler" },
+      { label: "Warranty", value: "100% Plant Replacement Guarantee" },
+    ],
   },
   {
-    title: "Outdoor Garden Setup",
-    copy: "Driveways, entrances and lawns planted with structure and restraint, using species that hold their form through Bengaluru's monsoon and dry months alike.",
+    title: "Outdoor Villa & Lawn Landscape Setup",
+    copy: "Lush lawn installation, palm avenues, stone walkways and flower beds engineered for durability against rain and sun.",
     image: pOutdoor,
-    points: ["Soil preparation", "Species layering", "Drainage & irrigation"],
+    points: ["Soil testing & deep organic conditioning", "Architectural species layering & focal points", "Sub-surface drainage & storm water management"],
+    specs: [
+      { label: "Coverage", value: "Villas, Penthouses, Estates" },
+      { label: "Soil Prep", value: "Red Earth + Vermicompost Mix" },
+      { label: "Plant Quality", value: "Acclimatised Nursery Stock" },
+      { label: "Execution Team", value: "In-house Master Horticulturists" },
+    ],
   },
   {
-    title: "Garden Design",
-    copy: "Considered drawings before construction — circulation, sightlines, planting rhythm and lighting resolved on paper so the finished garden feels inevitable.",
+    title: "Architectural Garden Masterplanning",
+    copy: "2D layout blueprints, 3D render visualizations, hardscape specifications, and plant palette curation before construction starts.",
     image: sLandscape,
-    points: ["Concept & masterplan", "Planting palette", "Lighting design"],
+    points: ["Architectural CAD drawings & 3D renders", "Lighting sightline & accent spotlight plan", "Complete itemised bill of quantities (BOQ)"],
+    specs: [
+      { label: "Deliverable", value: "Full CAD Masterplan + BOQ" },
+      { label: "Consultant", value: "Senior Landscape Architect" },
+      { label: "Turnaround", value: "5 Working Days" },
+      { label: "Revisions", value: "Unlimited Design Iterations" },
+    ],
   },
   {
-    title: "Landscaping",
-    copy: "Full-scope execution of hardscape and softscape: paving, retaining, water features, lawns and mature planting, delivered by our own site teams.",
+    title: "Full-Scope Landscaping Execution",
+    copy: "Complete hardscape and softscape execution including granite paving, stone retaining walls, water fountains, and mature trees.",
     image: after,
-    points: ["Hardscape & paving", "Lawn & turf", "Water features"],
+    points: ["Granite hardscaping & stone coping", "Water features & zen koi ponds", "Mature specimen palm installation"],
+    specs: [
+      { label: "Scope", value: "Turnkey Design to Handover" },
+      { label: "Project Size", value: "1,000 to 50,000+ sq ft" },
+      { label: "Project Manager", value: "Dedicated On-site Engineer" },
+      { label: "Contract Period", value: "Milestone-Based Execution" },
+    ],
   },
   {
-    title: "Garden Maintenance",
-    copy: "Contracted upkeep with documented schedules — pruning cycles, feeding, pest management and seasonal replanting that keep a garden at its intended peak.",
+    title: "Contracted Garden Maintenance SLA",
+    copy: "Scheduled care contracts with certified horticulturists handling pruning, organic fertilisation, pest control, and seasonal replanting.",
     image: sMaintenance,
-    points: ["Monthly & annual plans", "Seasonal replanting", "Site reporting"],
+    points: ["Bi-weekly or monthly site visits", "Organic nutrition & bio pest management", "Free replacement of underperforming plants"],
+    specs: [
+      { label: "Contract Tiers", value: "Monthly / Quarterly / Annual" },
+      { label: "Visits", value: "2 to 4 Visits per Month" },
+      { label: "Reporting", value: "Digital Health Check Summary" },
+      { label: "Replacements", value: "Included at zero added cost" },
+    ],
   },
   {
-    title: "Plant Maintenance",
-    copy: "Care programmes for indoor collections in homes, offices and hotels, including rotation, cleaning, feeding and immediate replacement of underperformers.",
+    title: "Corporate & Hospitality Plant Care",
+    copy: "Dedicated maintenance schedules for corporate headquarters, boutique hotels, restaurants, and retail spaces in Bengaluru.",
     image: g5,
-    points: ["Rotation & cleaning", "Nutrition programme", "Free replacements"],
+    points: ["Off-hours maintenance execution", "Plant rotation & shine maintenance", "Discreet emergency response team"],
+    specs: [
+      { label: "Suitable For", value: "Tech Parks, Hotels, Luxury Stores" },
+      { label: "SLA Response", value: "Within 24 Hours for Replacements" },
+      { label: "Compliance", value: "Safety & ISO Compliant Services" },
+      { label: "Invoicing", value: "GST Compliant Monthly Billing" },
+    ],
   },
   {
-    title: "Re-potting",
-    copy: "Root inspection, medium refresh and planter upgrades handled on site with clean sheeting, correct substrate and zero disruption to your space.",
+    title: "On-Site Re-potting & Media Refresh",
+    copy: "Root pruning, pot size upgrades, organic substrate replacement done at your premises with protective sheeting and zero mess.",
     image: sTerrace,
-    points: ["Root health check", "Substrate refresh", "Planter upgrade"],
+    points: ["Zero-spill protective floor cover", "Root health check & root-bound treatment", "Organic cocopeat & worm compost refresh"],
+    specs: [
+      { label: "Location", value: "Client Site Service" },
+      { label: "Speed", value: "Up to 50 Pots Re-potted / Day" },
+      { label: "Cleanup", value: "Complete Post-Service Cleaning" },
+      { label: "Pot Upgrades", value: "Ceramic & Fiber Pots Available" },
+    ],
   },
   {
-    title: "Organic Solutions",
-    copy: "Soil-first gardening using vermicompost, cocopeat and biological plant protection, so your garden stays safe for children, pets and pollinators.",
+    title: "Soil Testing & Bio Organic Solutions",
+    copy: "Soil pH analysis, nutrient deficiency diagnostic, vermicomposting program, and non-toxic bio pest eradication.",
     image: g6,
-    points: ["Compost programme", "Bio pest control", "Soil testing"],
+    points: ["Soil pH & electrical conductivity testing", "Tailored micronutrient blending", "100% pet and child safe bio formulas"],
+    specs: [
+      { label: "Diagnostic", value: "Lab-Grade Onsite Testing" },
+      { label: "Organic Standard", value: "Zero Chemical Residue" },
+      { label: "Soil Restoration", value: "2-Week Recovery Cycle" },
+      { label: "Custom Mix", value: "Formulated for Site Soil" },
+    ],
   },
 ];
 
@@ -166,21 +298,143 @@ export type GalleryItem = {
   title: string;
   category: string;
   ratio: "tall" | "square" | "wide";
+  description?: string;
+  specs?: { label: string; value: string }[];
 };
 
 export const GALLERY: GalleryItem[] = [
-  { image: hero, title: "Nursery Walk, Rajarajeshwari Nagar", category: "Outdoor", ratio: "wide" },
-  { image: g1, title: "Balcony Grass Garden", category: "Terrace", ratio: "tall" },
-  { image: g2, title: "Villa Entrance Planting", category: "Luxury Villas", ratio: "square" },
-  { image: g3, title: "Corporate Lobby Installation", category: "Commercial", ratio: "tall" },
-  { image: sTerrace, title: "Rooftop Terrace Deck", category: "Terrace", ratio: "wide" },
-  { image: sIndoor, title: "Living Wall, Private Residence", category: "Indoor", ratio: "wide" },
-  { image: g4, title: "Resort Poolside Landscape", category: "Commercial", ratio: "wide" },
-  { image: g5, title: "Botanical Study", category: "Indoor", ratio: "tall" },
-  { image: after, title: "Backyard Transformation", category: "Residential", ratio: "wide" },
-  { image: g6, title: "Courtyard Zen Garden", category: "Residential", ratio: "square" },
-  { image: sLandscape, title: "Formal Courtyard, Luxury Villa", category: "Luxury Villas", ratio: "wide" },
-  { image: pOutdoor, title: "Driveway Palm Avenue", category: "Outdoor", ratio: "tall" },
+  {
+    image: hero,
+    title: "RR Nagar Nursery Display Walkway",
+    category: "Outdoor",
+    ratio: "wide",
+    description: "Our flagship nursery showcase featuring 500+ mature plant varieties, hand-glazed planters, and custom landscape installations.",
+    specs: [
+      { label: "Location", value: "Rajarajeshwari Nagar, Bengaluru" },
+      { label: "Varieties", value: "Over 500+ Acclimatised Species" },
+    ],
+  },
+  {
+    image: g1,
+    title: "Balcony Grass & Vertical Sanctuary",
+    category: "Terrace",
+    ratio: "tall",
+    description: "A compact 200 sq ft apartment balcony converted into a serene private greenery with artificial turf, vertical planters, and warm mood lighting.",
+    specs: [
+      { label: "Project Size", value: "220 sq ft Balcony" },
+      { label: "Execution Time", value: "2 Days" },
+    ],
+  },
+  {
+    image: g2,
+    title: "Villa Grand Entrance Landscape",
+    category: "Luxury Villas",
+    ratio: "square",
+    description: "Architectural granite monolith planters combined with royal palms and spotlighting for a 5-bedroom luxury villa in Kanakapura Road.",
+    specs: [
+      { label: "Property", value: "Independent Villa Entrance" },
+      { label: "Planters Used", value: "Granite Monolith Composite" },
+    ],
+  },
+  {
+    image: g3,
+    title: "Corporate Lobby Atrium Installation",
+    category: "Commercial",
+    ratio: "tall",
+    description: "A double-height corporate lobby adorned with light-loving indoor ficus trees and self-watering modular poly planters.",
+    specs: [
+      { label: "Client", value: "Meridian Tech Park" },
+      { label: "Plant Count", value: "85 Premium Specimen Pots" },
+    ],
+  },
+  {
+    image: sTerrace,
+    title: "Rooftop Terrace Lounge Deck",
+    category: "Terrace",
+    ratio: "wide",
+    description: "Rooftop deck greenery with weather-proof seating, drought-resistant palms, drip irrigation, and perimeter hedging.",
+    specs: [
+      { label: "Area", value: "1,800 sq ft Terrace" },
+      { label: "Irrigation", value: "Automated WiFi Drip Timer" },
+    ],
+  },
+  {
+    image: sIndoor,
+    title: "Luxury Residence Living Wall",
+    category: "Indoor",
+    ratio: "wide",
+    description: "An indoor bio-wall incorporating 350+ tropical air-purifying foliage plants with concealed water catchments.",
+    specs: [
+      { label: "Dimensions", value: '14 ft Width x 9 ft Height' },
+      { label: "Lighting", value: "Integrated Full-Spectrum Grow Lights" },
+    ],
+  },
+  {
+    image: g4,
+    title: "Resort Poolside Tropical Garden",
+    category: "Commercial",
+    ratio: "wide",
+    description: "Tropical poolside landscaping featuring frangipani trees, weeping foliage, textured stone cladding, and lawn borders.",
+    specs: [
+      { label: "Location", value: "Nandi Hills Retreat" },
+      { label: "Land Area", value: "1.2 Acres" },
+    ],
+  },
+  {
+    image: g5,
+    title: "Botanical Plant Study & Care",
+    category: "Indoor",
+    ratio: "tall",
+    description: "A curated indoor tropical plant collection in custom ceramic glazed pots styled for a minimalist design studio.",
+    specs: [
+      { label: "Style", value: "Modern Japanese Minimalist" },
+      { label: "Pots", value: "Artisan Ceramic Stone Finish" },
+    ],
+  },
+  {
+    image: after,
+    title: "Residence Backyard Transformation",
+    category: "Residential",
+    ratio: "wide",
+    description: "Before and after overhaul turning an overgrown backyard into a pristine lawn, stone dining patio, and fruit trees.",
+    specs: [
+      { label: "Turnaround", value: "10 Days Full Execution" },
+      { label: "Hardscape", value: "Flamed Granite Paving" },
+    ],
+  },
+  {
+    image: g6,
+    title: "Courtyard Zen Bamboo Garden",
+    category: "Residential",
+    ratio: "square",
+    description: "Internal courtyard featuring golden bamboo, polished river pebbles, stone lantern, and low-maintenance ground covers.",
+    specs: [
+      { label: "Vibe", value: "Tranquil Zen Meditation Space" },
+      { label: "Maintenance", value: "Low Effort SLA" },
+    ],
+  },
+  {
+    image: sLandscape,
+    title: "Formal Courtyard & Estate Driveway",
+    category: "Luxury Villas",
+    ratio: "wide",
+    description: "Formal symmetrical estate landscape with sculpted topiary, central water fountain, and royal palm avenue.",
+    specs: [
+      { label: "Estate Area", value: "6,200 sq ft Masterplan" },
+      { label: "Fountain", value: "Custom Carved Natural Stone" },
+    ],
+  },
+  {
+    image: pOutdoor,
+    title: "Driveway Palm Avenue",
+    category: "Outdoor",
+    ratio: "tall",
+    description: "Line of 12-foot mature Areca and Foxtail Palms flanking the private entrance driveway of a luxury estate.",
+    specs: [
+      { label: "Tree Height", value: "10 - 14 Feet Mature Stock" },
+      { label: "Drainage", value: "Sub-surface Gravel Bed" },
+    ],
+  },
 ];
 
 export const GALLERY_CATEGORIES = [
@@ -193,47 +447,99 @@ export const GALLERY_CATEGORIES = [
   "Luxury Villas",
 ];
 
-export const PROJECTS = [
+export type Project = {
+  title: string;
+  location: string;
+  scope: string;
+  image: string;
+  year: string;
+  description: string;
+  specs: { label: string; value: string }[];
+};
+
+export const PROJECTS: Project[] = [
   {
-    title: "Aranya Villa",
+    title: "Aranya Villa Estate",
     location: "Kanakapura Road, Bengaluru",
-    scope: "Landscape masterplan · 6,200 sq ft",
+    scope: "Landscape Masterplan · 6,200 sq ft",
     image: sLandscape,
     year: "2024",
+    description: "A complete estate transformation including central stone fountain, lawn, driveway palm avenue, and automated drip irrigation.",
+    specs: [
+      { label: "Scope", value: "Masterplan, Hardscape & Planting" },
+      { label: "Area", value: "6,200 sq ft" },
+      { label: "Timeline", value: "3 Weeks Execution" },
+      { label: "Budget Tier", value: "Signature Luxury" },
+    ],
   },
   {
     title: "Skyline Terrace Residences",
-    location: "Rajarajeshwari Nagar",
-    scope: "Rooftop garden · 2,400 sq ft",
+    location: "Rajarajeshwari Nagar, Bengaluru",
+    scope: "Rooftop Garden · 2,400 sq ft",
     image: sTerrace,
     year: "2024",
+    description: "Penthouse rooftop lounge with UV-stabilized lightweight planters, living pergola, drip timer, and ambient accent lighting.",
+    specs: [
+      { label: "Scope", value: "Rooftop Deck & Perimeter Hedging" },
+      { label: "Area", value: "2,400 sq ft" },
+      { label: "Timeline", value: "7 Days" },
+      { label: "Budget Tier", value: "Premium Executive" },
+    ],
   },
   {
-    title: "Meridian Tech Park",
+    title: "Meridian Tech Park Headquarters",
     location: "Mysore Road, Bengaluru",
-    scope: "Lobby & atrium planting",
+    scope: "Lobby & Atrium Biophilic Installation",
     image: g3,
     year: "2023",
+    description: "Biophilic indoor office installation featuring 100+ acclimatised indoor plants in self-watering granite fiber planters.",
+    specs: [
+      { label: "Scope", value: "Corporate Lobby & Executive Suites" },
+      { label: "Plant Count", value: "120+ Large Pots" },
+      { label: "SLA Contract", value: "Weekly Maintenance SLA" },
+      { label: "Budget Tier", value: "Enterprise Commercial" },
+    ],
   },
   {
-    title: "The Grove Resort",
-    location: "Nandi Hills",
-    scope: "Poolside landscape · 1.2 acres",
+    title: "The Grove Eco Resort",
+    location: "Nandi Hills, Karnataka",
+    scope: "Poolside & Pathway Landscape · 1.2 Acres",
     image: g4,
     year: "2023",
+    description: "Resort garden development with tropical trees, stone pathways, lawn grounds, and low-voltage garden illumination.",
+    specs: [
+      { label: "Scope", value: "Resort Grounds & Poolside" },
+      { label: "Area", value: "1.2 Acres" },
+      { label: "Timeline", value: "1 Month Execution" },
+      { label: "Budget Tier", value: "Resort Signature" },
+    ],
   },
   {
-    title: "Casa Verde",
+    title: "Casa Verde Private Residence",
     location: "Kengeri, Bengaluru",
-    scope: "Backyard transformation",
+    scope: "Backyard Outdoor Garden Overhaul",
     image: after,
     year: "2022",
+    description: "Residential garden makeover with natural lawn turf, granite edging, outdoor seating nook, and aromatic flowering plants.",
+    specs: [
+      { label: "Scope", value: "Backyard Softscape & Lawn" },
+      { label: "Area", value: "1,500 sq ft" },
+      { label: "Timeline", value: "5 Days" },
+      { label: "Budget Tier", value: "Residential Deluxe" },
+    ],
   },
   {
-    title: "Nivas Courtyard Home",
-    location: "Banashankari",
-    scope: "Internal courtyard garden",
+    title: "Nivas Courtyard Villa",
+    location: "Banashankari, Bengaluru",
+    scope: "Internal Courtyard Zen Garden",
     image: g6,
     year: "2022",
+    description: "Serene internal courtyard featuring golden bamboo, natural water stone feature, river pebbles, and indirect lighting.",
+    specs: [
+      { label: "Scope", value: "Internal Courtyard Setup" },
+      { label: "Area", value: "450 sq ft" },
+      { label: "Timeline", value: "3 Days" },
+      { label: "Budget Tier", value: "Bespoke Courtyard" },
+    ],
   },
 ];

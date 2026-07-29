@@ -14,10 +14,12 @@ import { BeforeAfter } from "@/components/sections/BeforeAfter";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Faq } from "@/components/sections/Faq";
 import { ContactBlock } from "@/components/sections/ContactBlock";
+import { BudgetEstimator } from "@/components/sections/BudgetEstimator";
+import { PlantFinder } from "@/components/sections/PlantFinder";
 
-const title = "RR Heaven Gardenblr — Luxury Garden Nursery & Landscaping, Bengaluru";
+const title = "RR Heaven Gardenblr — ₹100 Cr Luxury Architectural Horticulture & Nursery Platform";
 const description =
-  "Premium indoor & outdoor plants, ceramic pots and complete landscaping in Rajarajeshwari Nagar, Bengaluru. 15+ years, 100+ landscape projects.";
+  "Bengaluru's premier landscape architecture, acclimatised plant nursery and bio-wall studio in Rajarajeshwari Nagar. 15+ years, 5,000+ luxury spaces transformed.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -41,7 +43,9 @@ function Index() {
     <>
       <Hero />
       <AboutSplit />
+      <BudgetEstimator />
       <ProductGrid limit={6} />
+      <PlantFinder />
       <ServiceRows limit={4} />
       <WhyUs />
       <GalleryMasonry filters={false} />

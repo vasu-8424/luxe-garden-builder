@@ -1,12 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/PageHeader";
 import { ServiceRows } from "@/components/sections/ServiceRows";
+import { BudgetEstimator } from "@/components/sections/BudgetEstimator";
 import { ProcessTimeline, CtaBanner } from "@/components/home/Sections";
 import { IMG } from "@/lib/catalog";
 
-const title = "Landscaping & Garden Services in Bengaluru | RR Heaven Gardenblr";
+const title = "Landscaping & Architectural Garden Services | RR Heaven Gardenblr";
 const description =
-  "Indoor and outdoor garden setup, garden design, landscaping, maintenance, re-potting and organic solutions across Bengaluru.";
+  "Indoor setup, living walls, villa landscaping, rooftop gardens, maintenance SLAs and organic plant protection across Bengaluru.";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -29,13 +30,14 @@ function ServicesPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Services"
-        title="Designed, built and kept alive."
-        intro="Eight disciplines, one team — so nothing is lost between the drawing and the ground."
+        eyebrow="Services & Execution SLA"
+        title="Designed, Built and Kept Alive."
+        intro="Eight specialized landscape disciplines delivered by our in-house team of horticulturists and site engineers."
         image={IMG.sLandscape}
         crumbs={[{ label: "Home", to: "/" }, { label: "Services" }]}
       />
       <ServiceRows />
+      <BudgetEstimator />
       <ProcessTimeline />
       <CtaBanner />
     </>

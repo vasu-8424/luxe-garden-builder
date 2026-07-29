@@ -1,17 +1,34 @@
 import { useRef, useState } from "react";
 import { Reveal } from "@/components/site/Reveal";
 import { IMG } from "@/lib/catalog";
+import { ImageEnquiryModal, type ImageEnquiryItem } from "@/components/sections/ImageEnquiryModal";
 
 export function BeforeAfter() {
   const [pos, setPos] = useState(50);
   const ref = useRef<HTMLDivElement>(null);
   const dragging = useRef(false);
+  const [selectedItem, setSelectedItem] = useState<ImageEnquiryItem | null>(null);
 
   const setFromClientX = (clientX: number) => {
     const el = ref.current;
     if (!el) return;
     const r = el.getBoundingClientRect();
     setPos(Math.min(100, Math.max(0, ((clientX - r.left) / r.width) * 100)));
+  };
+
+  const handleEnquireTransformation = () => {
+    setSelectedItem({
+      title: "Backyard Garden Transformation",
+      category: "Full Landscape Makeover",
+      image: IMG.after,
+      description: "Complete garden overhaul turning bare or patchy grounds into lush, layered, irrigated, and lit residential outdoor spaces.",
+      specs: [
+        { label: "Execution Time", value: "10-14 Days" },
+        { label: "Included", value: "Softscape, Lawn Turf, Hardscape, Drip System" },
+        { label: "Warranty", value: "Complimentary 3-Month Maintenance SLA" },
+        { label: "Location", value: "All Bengaluru Regions" },
+      ],
+    });
   };
 
   return (
@@ -24,10 +41,22 @@ export function BeforeAfter() {
               The same ground. Eleven weeks apart.
             </h2>
           </div>
-          <p className="max-w-sm text-sm leading-relaxed text-stone/65 md:text-right">
-            Drag the handle to see a bare Bengaluru backyard rebuilt into a
-            layered, lit and irrigated garden.
-          </p>
+          <div className="max-w-sm space-y-4 md:text-right">
+            <p className="text-sm leading-relaxed text-stone/65">
+              Drag the handle to see a bare Bengaluru backyard rebuilt into a
+              layered, lit and irrigated garden.
+            </p>
+            <button
+              type="button"
+              onClick={handleEnquireTransformation}
+              className="inline-flex items-center gap-2 border border-gold px-5 py-2.5 text-xs tracking-widest text-gold uppercase font-mono hover:bg-gold hover:text-black transition-colors"
+            >
+              <span>Enquire Similar Transformation</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.76.459 3.474 1.33 4.988L2 22l5.132-1.346a9.92 9.92 0 0 0 4.88 1.28h.004c5.507 0 9.99-4.478 9.99-9.985 0-2.667-1.038-5.174-2.925-7.06A9.917 9.917 0 0 0 12.012 2zm0 18.272h-.003a8.257 8.257 0 0 1-4.212-1.157l-.302-.18-3.125.819.834-3.045-.198-.315a8.27 8.27 0 0 1-1.267-4.408c0-4.561 3.712-8.273 8.275-8.273 2.21 0 4.287.862 5.85 2.426a8.23 8.23 0 0 1 2.422 5.854c0 4.562-3.712 8.273-8.274 8.273z"/>
+              </svg>
+            </button>
+          </div>
         </Reveal>
 
         <Reveal>
@@ -93,6 +122,11 @@ export function BeforeAfter() {
           </div>
         </Reveal>
       </div>
+
+      <ImageEnquiryModal
+        item={selectedItem}
+        onClose={() => setSelectedItem(null)}
+      />
     </section>
   );
 }

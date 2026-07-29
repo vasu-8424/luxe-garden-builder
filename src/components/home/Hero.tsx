@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { LuxLink } from "@/components/site/LuxButton";
 import { Counter } from "@/components/site/Counter";
@@ -7,11 +7,25 @@ import { IMG } from "@/lib/catalog";
 
 export function Hero() {
   const reduced = useReducedMotion();
-  const [offset, setOffset] = useState(0);
+  const bgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (reduced) return;
-    const onScroll = () => setOffset(Math.min(window.scrollY, 900) * 0.22);
+    let ticking = false;
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (bgRef.current) {
+            const offset = Math.min(window.scrollY, 900) * 0.22;
+            bgRef.current.style.transform = `translate3d(0, ${offset}px, 0)`;
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -19,7 +33,7 @@ export function Hero() {
 
   return (
     <section className="relative flex min-h-[100svh] items-end overflow-hidden bg-forest-deep">
-      <div className="absolute inset-0 -top-[8%] h-[116%]" style={{ transform: `translateY(${offset}px)` }}>
+      <div ref={bgRef} className="absolute inset-0 -top-[8%] h-[116%] will-change-transform">
         <img
           src={IMG.hero}
           alt="Golden-hour walkway lined with mature potted plants at the RR Heaven Gardenblr nursery in Bengaluru"
