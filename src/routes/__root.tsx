@@ -7,7 +7,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { SiteHeader } from "@/components/site/SiteHeader";
@@ -74,21 +74,39 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "RR Heaven Gardenblr — Luxury Garden Nursery in Bengaluru" },
+      { title: "RR Heaven Gardenblr — Luxury Architectural Horticulture & Nursery Studio" },
       {
         name: "description",
         content:
-          "Premium plants, designer planters and complete landscaping for Bengaluru's finest homes, villas, offices and resorts.",
+          "Bengaluru's premier landscape architecture, acclimatised plant nursery and bio-wall studio in Rajarajeshwari Nagar. 15+ years, 5,000+ luxury spaces transformed.",
       },
       { name: "author", content: BRAND.name },
       { property: "og:site_name", content: BRAND.name },
       { property: "og:type", content: "website" },
+      { property: "og:title", content: "RR Heaven Gardenblr — Luxury Architectural Horticulture & Nursery Studio" },
+      {
+        property: "og:description",
+        content:
+          "Bengaluru's premier landscape architecture, acclimatised plant nursery and bio-wall studio in Rajarajeshwari Nagar. 15+ years, 5,000+ luxury spaces transformed.",
+      },
+      { property: "og:image", content: "https://luxe-garden-builder.vercel.app/og-image.png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "RR Heaven Gardenblr — Luxury Architectural Horticulture & Nursery Studio" },
+      {
+        name: "twitter:description",
+        content:
+          "Bengaluru's premier landscape architecture, acclimatised plant nursery and bio-wall studio in Rajarajeshwari Nagar. 15+ years, 5,000+ luxury spaces transformed.",
+      },
+      { name: "twitter:image", content: "https://luxe-garden-builder.vercel.app/og-image.png" },
       { name: "theme-color", content: "#143A2C" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
