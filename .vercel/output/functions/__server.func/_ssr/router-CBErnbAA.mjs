@@ -5,7 +5,7 @@ import { r as AnimatePresence } from "../_libs/framer-motion.mjs";
 import { t as motion } from "../_libs/motion.mjs";
 import { r as NAV_LINKS, t as BRAND } from "./site-Dze4VZx_.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-DmbUuaCQ.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-CBErnbAA.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var styles_default = "/assets/styles-BNTA7YB2.css";
@@ -699,6 +699,11 @@ var Route$11 = createRootRouteWithContext()({
 			},
 			{
 				rel: "icon",
+				href: "/favicon.svg",
+				type: "image/svg+xml"
+			},
+			{
+				rel: "icon",
 				href: "/favicon.ico",
 				type: "image/x-icon"
 			},
@@ -710,19 +715,6 @@ var Route$11 = createRootRouteWithContext()({
 			{
 				rel: "apple-touch-icon",
 				href: "/apple-touch-icon.png"
-			},
-			{
-				rel: "preconnect",
-				href: "https://fonts.googleapis.com"
-			},
-			{
-				rel: "preconnect",
-				href: "https://fonts.gstatic.com",
-				crossOrigin: "anonymous"
-			},
-			{
-				rel: "stylesheet",
-				href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap"
 			}
 		],
 		scripts: [{
