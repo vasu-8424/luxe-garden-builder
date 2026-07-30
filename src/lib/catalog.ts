@@ -175,15 +175,15 @@ export const PRODUCTS: Product[] = [
     ],
   },
   {
-    title: "Biological Plant Protection & Neem Oils",
-    category: "Organic Pest Care",
-    copy: "Cold-pressed high-azadirachtin neem extract and botanical spray formulas to eradicate pests without toxic chemicals.",
+    title: "Mealybug, Fungicide & Insecticide Control",
+    category: "Pest & Plant Protection",
+    copy: "Comprehensive protection formulas targeting mealybugs, fungal diseases, and destructive garden insects effectively and safely.",
     image: g5,
     specs: [
-      { label: "Active Ingredient", value: "Cold Pressed Neem Extract" },
-      { label: "Safety", value: "100% Pet & Child Safe" },
-      { label: "Targets", value: "Mealybugs, Aphids, Spider Mites" },
-      { label: "Application", value: "Foliar Spray Every 14 Days" },
+      { label: "Protection Type", value: "Insecticide & Fungicide Dual Action" },
+      { label: "Target Pests", value: "Mealybugs, Scale, Aphids & Mites" },
+      { label: "Disease Control", value: "Powdery Mildew & Leaf Spot" },
+      { label: "Safety", value: "100% Pet, Child & Plant Safe" },
     ],
   },
 ];
