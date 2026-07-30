@@ -14,6 +14,7 @@ export function Hero() {
     let ticking = false;
 
     const onScroll = () => {
+      if (window.innerWidth < 768) return;
       if (!ticking) {
         window.requestAnimationFrame(() => {
           if (bgRef.current) {
@@ -33,14 +34,14 @@ export function Hero() {
 
   return (
     <section className="relative flex min-h-[100svh] w-full items-end overflow-hidden bg-forest-deep">
-      <div ref={bgRef} className="absolute inset-0 -top-[8%] h-[116%] w-full overflow-hidden will-change-transform">
+      <div ref={bgRef} className="absolute inset-0 h-full w-full md:-top-[8%] md:h-[116%] overflow-hidden will-change-transform">
         <img
           src={IMG.hero}
           alt="Golden-hour walkway lined with mature potted plants at the RR Heaven Gardenblr nursery in Bengaluru"
           width={1920}
           height={1088}
           fetchPriority="high"
-          className="h-full w-full object-cover object-center"
+          className="h-full w-full object-cover object-center md:object-cover"
         />
       </div>
       <div className="scrim-full absolute inset-0" />

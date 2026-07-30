@@ -5,19 +5,52 @@ import { PRODUCTS, type Product } from "@/lib/catalog";
 import { ImageEnquiryModal, type ImageEnquiryItem } from "@/components/sections/ImageEnquiryModal";
 
 function Card({ p, index, onSelect }: { p: Product; index: number; onSelect: (p: Product) => void }) {
-  const spanClass =
+  const desktopSpanClass =
     p.span === "tall"
-      ? "md:row-span-2 aspect-[3/4] md:aspect-auto md:min-h-[42rem]"
+      ? "md:row-span-2 md:min-h-[42rem]"
       : p.span === "wide"
-        ? "md:col-span-2 aspect-[4/3] md:aspect-[16/9]"
-        : "aspect-[4/5]";
+        ? "md:col-span-2 md:aspect-[16/9]"
+        : "";
 
   return (
-    <Reveal delay={(index % 3) * 0.08} className={spanClass}>
+    <Reveal delay={(index % 3) * 0.08} className={`w-full ${desktopSpanClass}`}>
+      {/* Mobile Card Version (visible < md) */}
+      <div
+        onClick={() => onSelect(p)}
+        className="block md:hidden border border-foreground/12 bg-white p-4 shadow-sm hover:border-gold cursor-pointer transition-all duration-300 rounded-none"
+      >
+        <div className="relative aspect-[4/3] w-full overflow-hidden bg-forest-deep mb-3">
+          <img
+            src={p.image}
+            alt={p.title}
+            loading="lazy"
+            className={`h-full w-full object-cover ${
+              p.fit === "contain" ? "object-contain bg-white p-3" : "object-cover"
+            }`}
+          />
+          <span className="absolute top-2.5 left-2.5 bg-black/75 px-2.5 py-1 text-[0.6rem] uppercase tracking-widest text-gold font-mono">
+            {p.category}
+          </span>
+        </div>
+
+        <h3 className="font-display text-xl text-forest font-semibold">{p.title}</h3>
+        <p className="mt-1.5 text-xs text-foreground/75 leading-relaxed font-sans line-clamp-2">{p.copy}</p>
+
+        <div className="mt-4 border-t border-foreground/10 pt-3 flex items-center justify-between">
+          <span className="text-[0.65rem] font-mono text-gold uppercase tracking-wider font-bold">
+            View Details & Specs
+          </span>
+          <span className="bg-forest text-on-dark px-3 py-1.5 text-[0.65rem] font-mono uppercase tracking-wider font-bold">
+            Enquire
+          </span>
+        </div>
+      </div>
+
+      {/* Desktop Card Version (visible >= md) */}
       <button
         type="button"
         onClick={() => onSelect(p)}
-        className="media-zoom group relative h-full w-full overflow-hidden bg-forest-deep text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-gold"
+        className="hidden md:block media-zoom group relative h-full w-full overflow-hidden bg-forest-deep text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-gold"
       >
         <img
           src={p.image}
@@ -97,7 +130,7 @@ export function ProductGrid({
           </Reveal>
         )}
 
-        <div className="grid auto-rows-[minmax(0,1fr)] gap-4 md:grid-cols-3 md:gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-5">
           {items.map((p, i) => (
             <Card key={p.title} p={p} index={i} onSelect={handleSelect} />
           ))}

@@ -125,7 +125,7 @@ export function WhyUs() {
             {WHY_US.map((w, i) => (
               <div
                 key={w.title}
-                className="snap-center shrink-0 w-[85vw] flex flex-col justify-between p-6 border border-gold/40 bg-[#071a13] text-on-dark shadow-2xl backdrop-blur-md"
+                className="snap-center shrink-0 w-[82vw] max-w-[22rem] flex flex-col justify-between p-6 border border-gold/40 bg-[#071a13] text-on-dark shadow-2xl backdrop-blur-md"
               >
                 <div>
                   <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-4">
@@ -296,7 +296,7 @@ export function ProcessTimeline() {
             {PROCESS.map((p, i) => (
               <div
                 key={p.n}
-                className="snap-center shrink-0 w-[85vw] flex flex-col justify-between p-6 border border-gold/40 bg-forest-deep text-on-dark shadow-2xl backdrop-blur-md"
+                className="snap-center shrink-0 w-[82vw] max-w-[22rem] flex flex-col justify-between p-6 border border-gold/40 bg-forest-deep text-on-dark shadow-2xl backdrop-blur-md"
               >
                 <div>
                   <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-4">
