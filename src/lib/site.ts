@@ -3,7 +3,7 @@ export const BRAND = {
   tagline: "Luxury Green Spaces. Crafted with Nature.",
   altTagline: "Premium Plants • Elegant Landscapes • Timeless Gardens",
   phones: ["9448276985", "8088776985"],
-  email: "gowdanavi444@gmail.com",
+  email: "rrheavengardenblr@gmail.com",
   whatsapp: "919448276985",
   address: {
     lines: [
