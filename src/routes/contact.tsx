@@ -7,7 +7,7 @@ import { IMG } from "@/lib/catalog";
 
 const title = "Contact RR Heaven Gardenblr — Garden Nursery, Rajarajeshwari Nagar";
 const description =
-  "Visit our nursery at BEML Layout, Rajarajeshwari Nagar, Bengaluru 560098. Open 7 working days, 7:30 AM – 10:00 PM. Call +91 9448276985.";
+  "Visit our nursery at BEML Layout, Rajarajeshwari Nagar, Bengaluru 560098. Open 7 working days, 7:30 AM – 10:00 PM. Call +91 9448276985 / +91 8088776985.";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({

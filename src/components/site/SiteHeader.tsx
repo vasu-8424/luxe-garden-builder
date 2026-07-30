@@ -9,7 +9,7 @@ function Wordmark({ light }: { light: boolean }) {
       <img
         src="/logo.png"
         alt="RR Heaven Gardenblr Logo"
-        className="h-11 sm:h-14 md:h-20 lg:h-24 w-auto object-contain rounded-lg bg-white p-1 shadow-md border border-gold/40 transition-transform duration-500 group-hover:scale-105"
+        className="h-13 sm:h-16 md:h-20 lg:h-24 w-auto object-contain rounded-lg bg-white p-1 shadow-md border border-gold/40 transition-transform duration-500 group-hover:scale-105"
       />
       <div className="hidden sm:flex flex-col">
         <span
