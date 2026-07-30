@@ -7,7 +7,7 @@ import { IMG } from "@/lib/catalog";
 
 const title = "Contact RR Heaven Gardenblr — Garden Nursery, Rajarajeshwari Nagar";
 const description =
-  "Visit our nursery at BEML Layout, Rajarajeshwari Nagar, Bengaluru 560098. Open daily 7:30 AM – 10:00 PM. Call +91 9448276985.";
+  "Visit our nursery at BEML Layout, Rajarajeshwari Nagar, Bengaluru 560098. Open 7 working days, 7:30 AM – 10:00 PM. Call +91 9448276985.";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -32,7 +32,7 @@ function ContactPage() {
       <PageHeader
         eyebrow="Contact"
         title="Find us on Kempegowda Road."
-        intro="Open every day of the week, from first light to late evening."
+        intro="Open 7 working days a week, 7:30 AM – 10:00 PM."
         image={IMG.g6}
         crumbs={[{ label: "Home", to: "/" }, { label: "Contact" }]}
       />

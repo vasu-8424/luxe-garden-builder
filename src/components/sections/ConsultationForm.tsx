@@ -184,8 +184,7 @@ export function ConsultationForm() {
               </LuxButton>
               {sent && (
                 <p className="text-sm text-olive">
-                  Thank you — your request is on its way. We reply within one
-                  working day.
+                  Thank you — your request is on its way. We respond within 24 hours (open 7 working days a week).
                 </p>
               )}
             </div>

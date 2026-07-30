@@ -13,7 +13,7 @@ export const BRAND = {
     ],
     landmark: "Near Suguna Pristine Square",
   },
-  hours: "Monday – Sunday · 7:30 AM – 10:00 PM",
+  hours: "Open 7 Working Days · 7:30 AM – 10:00 PM",
   social: {
     facebook: "https://www.facebook.com/share/1Eg3REgEZq/",
     instagram: "https://www.instagram.com/rr_haven_gardenblr/?utm_source=qr&r=nametag",

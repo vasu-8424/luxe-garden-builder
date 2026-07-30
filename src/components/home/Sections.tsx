@@ -48,7 +48,7 @@ export function AboutSplit() {
           <Reveal delay={0.15}>
             <div className="gold-rule mt-9" />
             <p className="body-lux mt-9">
-              RR Heaven Gardenblr began as a small nursery on Kempegowda Road in
+              RR Heaven Gardenblr began as a nursery on Kempegowda Road in
               Rajarajeshwari Nagar. Fifteen years later, it is a garden studio —
               a place where architects specify planters, interior designers source
               statement foliage, and families come back season after season.
@@ -430,7 +430,7 @@ export function CtaBanner() {
           </h2>
           <p className="mx-auto mt-8 max-w-xl text-[1.02rem] leading-relaxed text-stone/75 font-sans">
             A site visit, an honest estimate, and a plan you can live with for
-            years. Open every day, {BRAND.hours.split("·")[1]?.trim()}.
+            years. Open 7 working days, 7:30 AM – 10:00 PM.
           </p>
           <div className="mt-12 flex flex-wrap justify-center gap-3">
             <LuxAnchor href={`tel:+91${BRAND.phones[0]}`} variant="ghost">
