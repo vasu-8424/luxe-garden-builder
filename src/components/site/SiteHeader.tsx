@@ -9,17 +9,17 @@ function Wordmark({ light }: { light: boolean }) {
       <img
         src="/logo.png"
         alt="RR Heaven Gardenblr Logo"
-        className="h-14 sm:h-16 md:h-20 lg:h-24 w-auto object-contain rounded-lg bg-white p-1 shadow-md border border-gold/40 transition-transform duration-500 group-hover:scale-105"
+        className="h-18 sm:h-20 md:h-20 lg:h-24 w-auto object-contain rounded-lg bg-white p-1 shadow-md border border-gold/40 transition-transform duration-500 group-hover:scale-105"
       />
       <div className="flex flex-col">
         <span
-          className={`font-display text-[0.85rem] xs:text-[0.95rem] sm:text-[1.35rem] md:text-[1.5rem] leading-none tracking-tight transition-colors duration-500 ${
+          className={`font-display text-[1.05rem] xs:text-[1.15rem] sm:text-[1.35rem] md:text-[1.5rem] leading-none tracking-tight transition-colors duration-500 ${
             light ? "text-on-dark" : "text-forest"
           }`}
         >
           RR Heaven
         </span>
-        <span className="eyebrow text-[0.55rem] sm:text-[0.68rem] tracking-[0.16em] text-gold pt-0.5">
+        <span className="eyebrow text-[0.68rem] sm:text-[0.68rem] tracking-[0.16em] text-gold pt-0.5">
           Gardenblr
         </span>
       </div>
@@ -123,10 +123,10 @@ export function SiteHeader() {
                   <img
                     src="/logo.png"
                     alt="RR Heaven Logo"
-                    className="h-12 w-auto object-contain rounded-lg bg-white p-1"
+                    className="h-14 w-auto object-contain rounded-lg bg-white p-1"
                   />
                   <div>
-                    <span className="font-display text-xl text-on-dark block">RR Heaven</span>
+                    <span className="font-display text-2xl text-on-dark block">RR Heaven</span>
                     <span className="text-[0.6rem] text-gold tracking-widest uppercase font-mono block">Gardenblr</span>
                   </div>
                 </Link>

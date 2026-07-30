@@ -34,18 +34,30 @@ export function Hero() {
 
   return (
     <section className="relative flex min-h-[100svh] w-full items-end overflow-hidden bg-forest-deep">
+      {/* Background image with cinematic colour grade */}
       <div ref={bgRef} className="absolute inset-0 h-full w-full md:-top-[8%] md:h-[116%] overflow-hidden will-change-transform">
         <img
           src={IMG.hero}
-          alt="Golden-hour walkway lined with mature potted plants at the RR Heaven Gardenblr nursery in Bengaluru"
+          alt="Lush green garden with stone path and garden bench at RR Heaven Gardenblr, Bengaluru"
           width={1920}
           height={1088}
           fetchPriority="high"
-          className="h-full w-full object-cover object-center md:object-cover"
+          className="h-full w-full object-cover object-center"
+          style={{ filter: "brightness(0.78) saturate(1.35) contrast(1.08)" }}
         />
       </div>
-      <div className="scrim-full absolute inset-0" />
-      <div className="scrim-bottom absolute inset-x-0 bottom-0 h-1/2" />
+
+      {/* Deep forest-green tint overlay for brand colour harmony */}
+      <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(4,26,14,0.72) 0%, rgba(4,26,14,0.38) 55%, rgba(4,26,14,0.22) 100%)" }} />
+
+      {/* Radial vignette — darkens edges, keeps centre bright */}
+      <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 80% 80% at 50% 50%, transparent 40%, rgba(4,26,14,0.55) 100%)" }} />
+
+      {/* Strong bottom gradient so text is always readable */}
+      <div className="absolute inset-x-0 bottom-0 h-2/3" style={{ background: "linear-gradient(to top, rgba(4,26,14,0.95) 0%, rgba(4,26,14,0.7) 35%, transparent 100%)" }} />
+
+      {/* Top fade for nav legibility */}
+      <div className="absolute inset-x-0 top-0 h-36" style={{ background: "linear-gradient(to bottom, rgba(4,26,14,0.60) 0%, transparent 100%)" }} />
 
       <div className="relative mx-auto grid w-full max-w-[1400px] gap-10 px-4 pt-28 pb-12 sm:gap-14 sm:px-6 sm:pt-36 sm:pb-16 md:px-10 md:pb-24 lg:grid-cols-[1.35fr_0.65fr] lg:items-end">
         <div>
