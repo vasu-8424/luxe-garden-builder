@@ -5,26 +5,26 @@ import { r as AnimatePresence } from "../_libs/framer-motion.mjs";
 import { t as motion } from "../_libs/motion.mjs";
 import { r as NAV_LINKS, t as BRAND } from "./site-mWnNIISO.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-CLdAuRRi.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-IG2cp_B-.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
-var styles_default = "/assets/styles-8Hvh_uYq.css";
+var styles_default = "/assets/styles-BdIJMpJA.css";
 function Wordmark({ light }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
 		to: "/",
-		className: "group flex items-center gap-2.5 shrink-0",
+		className: "group flex items-center gap-2 sm:gap-2.5 shrink-0",
 		"aria-label": BRAND.name,
 		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 			src: "/logo.png",
 			alt: "RR Heaven Gardenblr Logo",
-			className: "h-13 sm:h-16 md:h-20 lg:h-24 w-auto object-contain rounded-lg bg-white p-1 shadow-md border border-gold/40 transition-transform duration-500 group-hover:scale-105"
+			className: "h-14 sm:h-16 md:h-20 lg:h-24 w-auto object-contain rounded-lg bg-white p-1 shadow-md border border-gold/40 transition-transform duration-500 group-hover:scale-105"
 		}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			className: "hidden sm:flex flex-col",
+			className: "flex flex-col",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-				className: `font-display text-[1.1rem] sm:text-[1.35rem] md:text-[1.5rem] leading-none tracking-tight transition-colors duration-500 ${light ? "text-on-dark" : "text-forest"}`,
+				className: `font-display text-[0.85rem] xs:text-[0.95rem] sm:text-[1.35rem] md:text-[1.5rem] leading-none tracking-tight transition-colors duration-500 ${light ? "text-on-dark" : "text-forest"}`,
 				children: "RR Heaven"
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-				className: "eyebrow text-[0.6rem] sm:text-[0.68rem] tracking-[0.2em] text-gold pt-0.5",
+				className: "eyebrow text-[0.55rem] sm:text-[0.68rem] tracking-[0.16em] text-gold pt-0.5",
 				children: "Gardenblr"
 			})]
 		})]
@@ -814,7 +814,14 @@ var Route$11 = createRootRouteWithContext()({
 function RootShell({ children }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("html", {
 		lang: "en",
-		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("head", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeadContent, {}) }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("body", { children: [children, /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Scripts, {})] })]
+		className: "overflow-x-hidden max-w-[100vw]",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("head", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeadContent, {}) }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("body", {
+			className: "overflow-x-hidden w-full max-w-[100vw]",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "overflow-x-hidden w-full max-w-[100vw] relative",
+				children
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Scripts, {})]
+		})]
 	});
 }
 function RootComponent() {
@@ -825,13 +832,16 @@ function RootComponent() {
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ScrollProgress, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(LuxCursor, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SiteHeader, {}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("main", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {}) }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("main", {
+				className: "overflow-x-hidden w-full max-w-[100vw] relative",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {})
+			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FloatingActions, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SiteFooter, {})
 		]
 	});
 }
-var $$splitComponentImporter$9 = () => import("./routes-Dra3MTFy.mjs");
+var $$splitComponentImporter$9 = () => import("./routes-Ct2bp4-T.mjs");
 var title$9 = "RR Heaven Gardenblr — ₹100 Cr Luxury Architectural Horticulture & Nursery Platform";
 var description$9 = "Bengaluru's premier landscape architecture, acclimatised plant nursery and bio-wall studio in Rajarajeshwari Nagar. 15+ years, 5,000+ luxury spaces transformed.";
 var Route$10 = createFileRoute("/")({

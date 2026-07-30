@@ -12,7 +12,7 @@ import { t as GalleryMasonry } from "./GalleryMasonry-Cu4tsqU5.mjs";
 import { n as ProductGrid, t as PlantFinder } from "./PlantFinder-D2Y1XNJG.mjs";
 import { t as BeforeAfter } from "./BeforeAfter-BU9pQl2Y.mjs";
 import { n as ServiceRows, t as BudgetEstimator } from "./BudgetEstimator-Bqek9ILX.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-Dra3MTFy.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-Ct2bp4-T.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function Hero() {
@@ -38,27 +38,27 @@ function Hero() {
 		return () => window.removeEventListener("scroll", onScroll);
 	}, [reduced]);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
-		className: "relative flex min-h-[100svh] items-end overflow-hidden bg-forest-deep",
+		className: "relative flex min-h-[100svh] w-full items-end overflow-hidden bg-forest-deep",
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				ref: bgRef,
-				className: "absolute inset-0 -top-[8%] h-[116%] will-change-transform",
+				className: "absolute inset-0 -top-[8%] h-[116%] w-full overflow-hidden will-change-transform",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 					src: IMG.hero,
 					alt: "Golden-hour walkway lined with mature potted plants at the RR Heaven Gardenblr nursery in Bengaluru",
 					width: 1920,
 					height: 1088,
 					fetchPriority: "high",
-					className: "h-full w-full object-cover"
+					className: "h-full w-full object-cover object-center"
 				})
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "scrim-full absolute inset-0" }),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "scrim-bottom absolute inset-x-0 bottom-0 h-1/2" }),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "relative mx-auto grid w-full max-w-[1400px] gap-14 px-5 pt-36 pb-16 md:px-10 md:pb-24 lg:grid-cols-[1.35fr_0.65fr] lg:items-end",
+				className: "relative mx-auto grid w-full max-w-[1400px] gap-10 px-4 pt-28 pb-12 sm:gap-14 sm:px-6 sm:pt-36 sm:pb-16 md:px-10 md:pb-24 lg:grid-cols-[1.35fr_0.65fr] lg:items-end",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.p, {
-						className: "eyebrow text-gold",
+						className: "eyebrow text-gold text-xs sm:text-sm font-mono",
 						initial: reduced ? false : {
 							opacity: 0,
 							y: 14
@@ -74,7 +74,7 @@ function Hero() {
 						children: "Premium Plants • Elegant Landscapes • Timeless Gardens"
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
-						className: "display-xl mt-8 text-on-dark",
+						className: "display-xl mt-6 sm:mt-8 text-on-dark text-3xl sm:text-5xl md:text-6xl leading-tight",
 						children: ["Create Living Spaces", "That Breathe Luxury."].map((line, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "block overflow-hidden",
 							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.span, {
@@ -99,7 +99,7 @@ function Hero() {
 						}, line))
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.p, {
-						className: "mt-9 max-w-xl text-[1.02rem] leading-relaxed text-stone/80",
+						className: "mt-6 sm:mt-9 max-w-xl text-sm sm:text-base leading-relaxed text-stone/80 font-sans",
 						initial: reduced ? false : {
 							opacity: 0,
 							y: 18
@@ -115,7 +115,7 @@ function Hero() {
 						children: "Premium indoor plants, outdoor plants, designer pots, landscaping and complete garden solutions crafted for homes, villas, offices, resorts and commercial spaces across Bengaluru."
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
-						className: "mt-11 flex flex-wrap gap-3",
+						className: "mt-8 flex flex-col sm:flex-row gap-3 w-full sm:w-auto",
 						initial: reduced ? false : {
 							opacity: 0,
 							y: 18
@@ -131,10 +131,12 @@ function Hero() {
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(LuxLink, {
 							to: "/products",
 							variant: "ghost",
+							className: "w-full sm:w-auto text-center justify-center",
 							children: "Explore Collection"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(LuxLink, {
 							to: "/book-consultation",
 							variant: "ghost",
+							className: "w-full sm:w-auto text-center justify-center",
 							children: "Book Garden Consultation"
 						})]
 					})

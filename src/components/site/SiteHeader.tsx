@@ -5,21 +5,21 @@ import { BRAND, NAV_LINKS } from "@/lib/site";
 
 function Wordmark({ light }: { light: boolean }) {
   return (
-    <Link to="/" className="group flex items-center gap-2.5 shrink-0" aria-label={BRAND.name}>
+    <Link to="/" className="group flex items-center gap-2 sm:gap-2.5 shrink-0" aria-label={BRAND.name}>
       <img
         src="/logo.png"
         alt="RR Heaven Gardenblr Logo"
-        className="h-13 sm:h-16 md:h-20 lg:h-24 w-auto object-contain rounded-lg bg-white p-1 shadow-md border border-gold/40 transition-transform duration-500 group-hover:scale-105"
+        className="h-14 sm:h-16 md:h-20 lg:h-24 w-auto object-contain rounded-lg bg-white p-1 shadow-md border border-gold/40 transition-transform duration-500 group-hover:scale-105"
       />
-      <div className="hidden sm:flex flex-col">
+      <div className="flex flex-col">
         <span
-          className={`font-display text-[1.1rem] sm:text-[1.35rem] md:text-[1.5rem] leading-none tracking-tight transition-colors duration-500 ${
+          className={`font-display text-[0.85rem] xs:text-[0.95rem] sm:text-[1.35rem] md:text-[1.5rem] leading-none tracking-tight transition-colors duration-500 ${
             light ? "text-on-dark" : "text-forest"
           }`}
         >
           RR Heaven
         </span>
-        <span className="eyebrow text-[0.6rem] sm:text-[0.68rem] tracking-[0.2em] text-gold pt-0.5">
+        <span className="eyebrow text-[0.55rem] sm:text-[0.68rem] tracking-[0.16em] text-gold pt-0.5">
           Gardenblr
         </span>
       </div>

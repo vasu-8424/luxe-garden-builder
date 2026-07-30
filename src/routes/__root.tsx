@@ -146,12 +146,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="overflow-x-hidden max-w-[100vw]">
       <head>
         <HeadContent />
       </head>
-      <body>
-        {children}
+      <body className="overflow-x-hidden w-full max-w-[100vw]">
+        <div className="overflow-x-hidden w-full max-w-[100vw] relative">
+          {children}
+        </div>
         <Scripts />
       </body>
     </html>
@@ -167,7 +169,7 @@ function RootComponent() {
       <LuxCursor />
       <SiteHeader />
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <main>
+      <main className="overflow-x-hidden w-full max-w-[100vw] relative">
         <Outlet />
       </main>
       <FloatingActions />

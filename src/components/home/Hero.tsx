@@ -32,24 +32,24 @@ export function Hero() {
   }, [reduced]);
 
   return (
-    <section className="relative flex min-h-[100svh] items-end overflow-hidden bg-forest-deep">
-      <div ref={bgRef} className="absolute inset-0 -top-[8%] h-[116%] will-change-transform">
+    <section className="relative flex min-h-[100svh] w-full items-end overflow-hidden bg-forest-deep">
+      <div ref={bgRef} className="absolute inset-0 -top-[8%] h-[116%] w-full overflow-hidden will-change-transform">
         <img
           src={IMG.hero}
           alt="Golden-hour walkway lined with mature potted plants at the RR Heaven Gardenblr nursery in Bengaluru"
           width={1920}
           height={1088}
           fetchPriority="high"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover object-center"
         />
       </div>
       <div className="scrim-full absolute inset-0" />
       <div className="scrim-bottom absolute inset-x-0 bottom-0 h-1/2" />
 
-      <div className="relative mx-auto grid w-full max-w-[1400px] gap-14 px-5 pt-36 pb-16 md:px-10 md:pb-24 lg:grid-cols-[1.35fr_0.65fr] lg:items-end">
+      <div className="relative mx-auto grid w-full max-w-[1400px] gap-10 px-4 pt-28 pb-12 sm:gap-14 sm:px-6 sm:pt-36 sm:pb-16 md:px-10 md:pb-24 lg:grid-cols-[1.35fr_0.65fr] lg:items-end">
         <div>
           <motion.p
-            className="eyebrow text-gold"
+            className="eyebrow text-gold text-xs sm:text-sm font-mono"
             initial={reduced ? false : { opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.15 }}
@@ -57,7 +57,7 @@ export function Hero() {
             Premium Plants • Elegant Landscapes • Timeless Gardens
           </motion.p>
 
-          <h1 className="display-xl mt-8 text-on-dark">
+          <h1 className="display-xl mt-6 sm:mt-8 text-on-dark text-3xl sm:text-5xl md:text-6xl leading-tight">
             {["Create Living Spaces", "That Breathe Luxury."].map((line, i) => (
               <span key={line} className="block overflow-hidden">
                 <motion.span
@@ -79,7 +79,7 @@ export function Hero() {
           </h1>
 
           <motion.p
-            className="mt-9 max-w-xl text-[1.02rem] leading-relaxed text-stone/80"
+            className="mt-6 sm:mt-9 max-w-xl text-sm sm:text-base leading-relaxed text-stone/80 font-sans"
             initial={reduced ? false : { opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
@@ -90,15 +90,15 @@ export function Hero() {
           </motion.p>
 
           <motion.div
-            className="mt-11 flex flex-wrap gap-3"
+            className="mt-8 flex flex-col sm:flex-row gap-3 w-full sm:w-auto"
             initial={reduced ? false : { opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.75 }}
           >
-            <LuxLink to="/products" variant="ghost">
+            <LuxLink to="/products" variant="ghost" className="w-full sm:w-auto text-center justify-center">
               Explore Collection
             </LuxLink>
-            <LuxLink to="/book-consultation" variant="ghost">
+            <LuxLink to="/book-consultation" variant="ghost" className="w-full sm:w-auto text-center justify-center">
               Book Garden Consultation
             </LuxLink>
           </motion.div>
