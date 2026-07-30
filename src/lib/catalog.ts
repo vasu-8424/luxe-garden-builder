@@ -12,7 +12,7 @@ import cta from "@/assets/cta.jpg";
 import before from "@/assets/before.jpg";
 import after from "@/assets/after.jpg";
 import g1 from "@/assets/g1.jpg";
-import g2 from "@/assets/g2.jpg";
+import g2 from "@/assets/g2.png";
 import g3 from "@/assets/g3.jpg";
 import g4 from "@/assets/g4.jpg";
 import g5 from "@/assets/g5.jpg";
@@ -46,6 +46,7 @@ export type Product = {
   image: string;
   category: string;
   span?: "wide" | "tall";
+  fit?: "contain" | "cover";
   specs: { label: string; value: string }[];
   careGuide?: string[];
 };
@@ -116,6 +117,7 @@ export const PRODUCTS: Product[] = [
     copy: "Architectural monolithic planters crafted from basalt fibre and stone powder, suited for grand villa entrances.",
     image: g2,
     span: "wide",
+    fit: "contain",
     specs: [
       { label: "Structure", value: "Engineered Granite Fibre Monolith" },
       { label: "Aesthetic", value: "Minimalist Architectural Concrete Finish" },
@@ -298,6 +300,7 @@ export type GalleryItem = {
   title: string;
   category: string;
   ratio: "tall" | "square" | "wide";
+  fit?: "contain" | "cover";
   description?: string;
   specs?: { label: string; value: string }[];
 };
@@ -330,6 +333,7 @@ export const GALLERY: GalleryItem[] = [
     title: "Villa Grand Entrance Landscape",
     category: "Luxury Villas",
     ratio: "square",
+    fit: "contain",
     description: "Architectural granite monolith planters combined with royal palms and spotlighting for a 5-bedroom luxury villa in Kanakapura Road.",
     specs: [
       { label: "Property", value: "Independent Villa Entrance" },

@@ -23,7 +23,9 @@ function Card({ p, index, onSelect }: { p: Product; index: number; onSelect: (p:
           src={p.image}
           alt={`${p.title} available at RR Heaven Gardenblr, Bengaluru`}
           loading="lazy"
-          className="h-full w-full object-cover"
+          className={`h-full w-full transition-transform duration-700 group-hover:scale-105 ${
+            p.fit === "contain" ? "object-contain bg-white p-3 md:p-6" : "object-cover"
+          }`}
         />
         <div className="scrim-bottom absolute inset-0 opacity-90 transition-opacity duration-700 group-hover:opacity-100" />
 
@@ -74,6 +76,7 @@ export function ProductGrid({
       description: p.copy,
       specs: p.specs,
       points: p.careGuide,
+      fit: p.fit,
     });
   };
 

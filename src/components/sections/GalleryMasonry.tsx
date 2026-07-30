@@ -21,6 +21,7 @@ export function GalleryMasonry({ filters = true }: { filters?: boolean }) {
       category: g.category,
       image: g.image,
       description: g.description || `Architectural garden installation crafted by RR Heaven Gardenblr for ${g.category} spaces in Bengaluru.`,
+      fit: g.fit,
       specs: g.specs || [
         { label: "Category", value: g.category },
         { label: "Execution", value: "RR Heaven Gardenblr Master Team" },
@@ -76,7 +77,9 @@ export function GalleryMasonry({ filters = true }: { filters?: boolean }) {
                     src={g.image}
                     alt={`${g.title} — ${g.category} garden project by RR Heaven Gardenblr`}
                     loading="lazy"
-                    className="h-full w-full object-cover"
+                    className={`h-full w-full transition-transform duration-700 group-hover:scale-105 ${
+                      g.fit === "contain" ? "object-contain bg-white p-3" : "object-cover"
+                    }`}
                   />
                 </div>
                 <div className="scrim-bottom absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />

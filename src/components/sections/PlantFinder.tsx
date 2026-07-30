@@ -22,6 +22,7 @@ export function PlantFinder() {
       description: p.copy,
       specs: p.specs,
       points: p.careGuide,
+      fit: p.fit,
     });
   };
 
@@ -70,7 +71,9 @@ export function PlantFinder() {
                     <img
                       src={p.image}
                       alt={p.title}
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className={`h-full w-full transition-transform duration-700 group-hover:scale-105 ${
+                        p.fit === "contain" ? "object-contain bg-white p-3" : "object-cover"
+                      }`}
                     />
                     <span className="absolute top-3 left-3 bg-black/70 px-2.5 py-1 text-[0.65rem] uppercase tracking-widest text-gold font-mono">
                       {p.category}

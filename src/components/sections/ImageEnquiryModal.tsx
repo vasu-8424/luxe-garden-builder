@@ -10,6 +10,7 @@ export type ImageEnquiryItem = {
   specs?: { label: string; value: string }[];
   points?: string[];
   price?: string;
+  fit?: "contain" | "cover";
 };
 
 interface ImageEnquiryModalProps {
@@ -122,9 +123,9 @@ export function ImageEnquiryModal({ item, onClose }: ImageEnquiryModalProps) {
                 <img
                   src={item.image}
                   alt={item.title}
-                  className={`w-full object-cover transition-transform duration-500 cursor-zoom-in ${
-                    zoomed ? "scale-125" : "scale-100 h-64 sm:h-80 md:h-96"
-                  }`}
+                  className={`w-full transition-transform duration-500 cursor-zoom-in ${
+                    item.fit === "contain" ? "object-contain bg-white p-4" : "object-cover"
+                  } ${zoomed ? "scale-125" : "scale-100 h-64 sm:h-80 md:h-96"}`}
                   onClick={() => setZoomed(!zoomed)}
                 />
                 <span className="absolute bottom-3 left-3 bg-black/70 px-3 py-1 text-[0.65rem] tracking-[0.2em] uppercase text-gold">
