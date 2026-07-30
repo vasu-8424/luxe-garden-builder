@@ -10,7 +10,7 @@ export function BudgetEstimator() {
   const [phone, setPhone] = useState("");
 
   const estimatedPlants = Math.round(areaSize * (spaceType === "indoor" ? 0.08 : 0.04));
-  const estimatedDays = spaceType === "balcony" ? 2 : spaceType === "terrace" ? 5 : 12;
+  const estimatedDays = spaceType === "balcony" ? 2 : spaceType === "terrace" ? 5 : 7;
 
   const tierDetails = {
     standard: { label: "Executive Tier", specs: "Acclimatised Nursery Stock + UV Poly Planters" },

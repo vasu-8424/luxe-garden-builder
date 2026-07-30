@@ -2,8 +2,8 @@ import { n as require_jsx_runtime } from "../_libs/react+tanstack__react-query.m
 import { r as IMG } from "./catalog-padVYDOm.mjs";
 import { t as PageHeader } from "./PageHeader-Bl1a6HXT.mjs";
 import { i as ProcessTimeline, r as CtaBanner } from "./Sections-C8UyaDwt.mjs";
-import { n as ServiceRows, t as BudgetEstimator } from "./BudgetEstimator-UvDJAJ2a.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/services-BdXDLVFe.js
+import { n as ServiceRows, t as BudgetEstimator } from "./BudgetEstimator-Br7csyDL.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/services-CJB6_cuw.js
 var import_jsx_runtime = require_jsx_runtime();
 function ServicesPage() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [

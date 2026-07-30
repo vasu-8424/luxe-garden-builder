@@ -5,7 +5,7 @@ import { r as AnimatePresence } from "../_libs/framer-motion.mjs";
 import { t as motion } from "../_libs/motion.mjs";
 import { r as NAV_LINKS, t as BRAND } from "./site-x3fcXbb9.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-DYjJPvw9.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-DZ_yvJA3.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var styles_default = "/assets/styles-B3_07Dd0.css";
@@ -831,7 +831,7 @@ function RootComponent() {
 		]
 	});
 }
-var $$splitComponentImporter$9 = () => import("./routes-BaxiyFg0.mjs");
+var $$splitComponentImporter$9 = () => import("./routes-BW66yo1d.mjs");
 var title$9 = "RR Heaven Gardenblr — ₹100 Cr Luxury Architectural Horticulture & Nursery Platform";
 var description$9 = "Bengaluru's premier landscape architecture, acclimatised plant nursery and bio-wall studio in Rajarajeshwari Nagar. 15+ years, 5,000+ luxury spaces transformed.";
 var Route$10 = createFileRoute("/")({
@@ -1175,7 +1175,7 @@ var Route$3 = createFileRoute("/projects")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./services-BdXDLVFe.mjs");
+var $$splitComponentImporter$1 = () => import("./services-CJB6_cuw.mjs");
 var title$1 = "Landscaping & Architectural Garden Services | RR Heaven Gardenblr";
 var description$1 = "Indoor setup, living walls, villa landscaping, rooftop gardens, maintenance SLAs and organic plant protection across Bengaluru.";
 var Route$2 = createFileRoute("/services")({

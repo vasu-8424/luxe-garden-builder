@@ -3,7 +3,7 @@ import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tan
 import { d as SERVICES, o as LuxLink, u as Reveal } from "./catalog-padVYDOm.mjs";
 import { t as BRAND } from "./site-x3fcXbb9.mjs";
 import { t as ImageEnquiryModal } from "./ImageEnquiryModal-CHqQvpYk.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/BudgetEstimator-UvDJAJ2a.js
+//#region node_modules/.nitro/vite/services/ssr/assets/BudgetEstimator-Br7csyDL.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function ServiceRows({ limit }) {
@@ -134,7 +134,7 @@ function BudgetEstimator() {
 	const [name, setName] = (0, import_react.useState)("");
 	const [phone, setPhone] = (0, import_react.useState)("");
 	const estimatedPlants = Math.round(areaSize * (spaceType === "indoor" ? .08 : .04));
-	const estimatedDays = spaceType === "balcony" ? 2 : spaceType === "terrace" ? 5 : 12;
+	const estimatedDays = spaceType === "balcony" ? 2 : spaceType === "terrace" ? 5 : 7;
 	const tierDetails = {
 		standard: {
 			label: "Executive Tier",
