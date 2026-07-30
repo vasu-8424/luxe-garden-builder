@@ -40,9 +40,19 @@ export function SiteFooter() {
       <div className="mx-auto max-w-[1400px] px-5 py-20 md:px-10 md:py-28">
         <div className="grid gap-16 lg:grid-cols-[1.4fr_2fr]">
           <div>
-            <p className="font-display text-3xl leading-tight">
-              RR Heaven <span className="text-gold">Gardenblr</span>
-            </p>
+            <Link to="/" className="inline-flex items-center gap-4 group">
+              <img
+                src="/logo.png"
+                alt="RR Heaven Gardenblr Logo"
+                className="h-16 w-auto md:h-20 object-contain rounded-full bg-white p-1.5 shadow-lg border border-gold/40 transition-transform duration-500 group-hover:scale-105"
+              />
+              <div>
+                <p className="font-display text-2xl md:text-3xl leading-tight text-on-dark">
+                  RR Heaven <span className="text-gold">Gardenblr</span>
+                </p>
+                <p className="eyebrow text-gold/80 text-xs font-mono mt-1">Landscape & Garden Studio</p>
+              </div>
+            </Link>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-stone/70 font-sans">
               {BRAND.tagline} Premium plants, designer planters and complete
               landscape craftsmanship for Bengaluru's finest homes and spaces.
