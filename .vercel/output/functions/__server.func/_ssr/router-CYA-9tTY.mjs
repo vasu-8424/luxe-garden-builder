@@ -5,10 +5,10 @@ import { r as AnimatePresence } from "../_libs/framer-motion.mjs";
 import { t as motion } from "../_libs/motion.mjs";
 import { r as NAV_LINKS, t as BRAND } from "./site-18rpi0wb.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-CIPiFvvA.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-CYA-9tTY.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
-var styles_default = "/assets/styles-CuwsVyIp.css";
+var styles_default = "/assets/styles-Bzq8DFd3.css";
 function Wordmark({ light }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
 		to: "/",
@@ -603,6 +603,174 @@ function LuxCursor() {
 		}
 	});
 }
+function Preloader({ progress }) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
+		initial: { opacity: 1 },
+		exit: { opacity: 0 },
+		transition: {
+			duration: .6,
+			ease: "easeInOut"
+		},
+		className: "fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#F7F6F3] overflow-hidden",
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "w-[350px] h-[350px] rounded-full border border-forest/[0.03] absolute" }),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "w-[550px] h-[550px] rounded-full border border-forest/[0.02] absolute" }),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "w-[750px] h-[750px] rounded-full border border-forest/[0.015] absolute" }),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "w-[950px] h-[950px] rounded-full border border-forest/[0.01] absolute" }),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "w-[1150px] h-[1150px] rounded-full border border-forest/[0.005] absolute" })
+				]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "relative w-[300px] h-[300px] flex items-center justify-center",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
+					className: "absolute inset-0 w-full h-full pointer-events-none z-0",
+					viewBox: "0 0 280 280",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("defs", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("filter", {
+							id: "glow-rose",
+							x: "-50%",
+							y: "-50%",
+							width: "200%",
+							height: "200%",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("feGaussianBlur", {
+								stdDeviation: "3.5",
+								result: "blur"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("feComposite", {
+								in: "SourceGraphic",
+								in2: "blur",
+								operator: "over"
+							})]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("filter", {
+							id: "glow-forest",
+							x: "-50%",
+							y: "-50%",
+							width: "200%",
+							height: "200%",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("feGaussianBlur", {
+								stdDeviation: "2",
+								result: "blur"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("feComposite", {
+								in: "SourceGraphic",
+								in2: "blur",
+								operator: "over"
+							})]
+						})] }),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("circle", {
+							cx: "140",
+							cy: "140",
+							r: "92",
+							fill: "none",
+							stroke: "#143A2C",
+							strokeOpacity: "0.08",
+							strokeWidth: "1",
+							strokeDasharray: "3 3"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("g", {
+							className: "animate-spin-slow transform-origin-center-svg",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("circle", {
+									cx: "140",
+									cy: "140",
+									r: "106",
+									fill: "none",
+									stroke: "#143A2C",
+									strokeWidth: "2",
+									strokeDasharray: "420 666",
+									strokeDashoffset: "120",
+									strokeLinecap: "round"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("circle", {
+									cx: "246",
+									cy: "140",
+									r: "6.5",
+									fill: "#143A2C",
+									filter: "url(#glow-forest)"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("circle", {
+									cx: "246",
+									cy: "140",
+									r: "4.5",
+									fill: "#0F2E22"
+								})
+							]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("g", {
+							className: "animate-spin-reverse-slow transform-origin-center-svg",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("circle", {
+									cx: "140",
+									cy: "140",
+									r: "122",
+									fill: "none",
+									stroke: "#143A2C",
+									strokeOpacity: "0.12",
+									strokeWidth: "1",
+									strokeDasharray: "2 4"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("circle", {
+									cx: "262",
+									cy: "140",
+									r: "8",
+									fill: "#F43F5E",
+									fillOpacity: "0.25"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("circle", {
+									cx: "262",
+									cy: "140",
+									r: "5",
+									fill: "#F43F5E",
+									filter: "url(#glow-rose)"
+								})
+							]
+						})
+					]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "w-[160px] h-[160px] bg-white rounded-[32px] shadow-[0_20px_50px_rgba(20,58,44,0.06)] border border-neutral-100 flex items-center justify-center relative z-10 p-5 select-none",
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+						src: "/logo.png",
+						alt: BRAND.name,
+						className: "max-w-full max-h-full object-contain",
+						draggable: false
+					})
+				})]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "text-center mt-6 z-10 px-5 flex flex-col items-center",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
+						className: "font-display font-bold text-3xl tracking-[0.18em] text-forest select-none",
+						children: "RR HEAVEN"
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "flex items-center gap-4 w-full max-w-[280px] justify-center mt-3.5",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "h-[1px] bg-forest/15 flex-grow" }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "font-mono text-[0.72rem] tracking-[0.25em] text-[#143A2C] font-semibold select-none",
+								children: "GARDENBLR"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "h-[1px] bg-forest/15 flex-grow" })
+						]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "text-neutral-400 font-sans text-xs tracking-wider mt-2.5 max-w-[320px] select-none",
+						children: BRAND.tagline
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "w-56 h-[3px] bg-neutral-200/50 rounded-full overflow-hidden mt-8",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "h-full bg-forest rounded-full transition-all duration-200 ease-out",
+							style: { width: `${progress}%` }
+						})
+					})
+				]
+			})
+		]
+	});
+}
 function NotFoundComponent() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 		className: "flex min-h-screen items-center justify-center bg-background px-5",
@@ -826,9 +994,36 @@ function RootShell({ children }) {
 }
 function RootComponent() {
 	const { queryClient } = Route$11.useRouteContext();
+	const [loading, setLoading] = (0, import_react.useState)(true);
+	const [progress, setProgress] = (0, import_react.useState)(0);
+	(0, import_react.useEffect)(() => {
+		const startTime = Date.now();
+		const duration = 2e3;
+		const updateProgress = () => {
+			const elapsed = Date.now() - startTime;
+			const pct = Math.min(elapsed / duration * 100, 100);
+			setProgress(pct);
+			if (elapsed < duration) requestAnimationFrame(updateProgress);
+			else setTimeout(() => {
+				setLoading(false);
+			}, 300);
+		};
+		requestAnimationFrame(updateProgress);
+	}, []);
+	(0, import_react.useEffect)(() => {
+		if (loading) document.body.style.overflow = "hidden";
+		else document.body.style.overflow = "";
+		return () => {
+			document.body.style.overflow = "";
+		};
+	}, [loading]);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(QueryClientProvider, {
 		client: queryClient,
 		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(AnimatePresence, {
+				mode: "wait",
+				children: loading && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Preloader, { progress })
+			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ScrollProgress, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(LuxCursor, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SiteHeader, {}),

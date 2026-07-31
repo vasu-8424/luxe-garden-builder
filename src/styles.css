@@ -70,6 +70,8 @@
   --animate-slide-up: slideUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   --animate-scale-in: scaleIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   --animate-marquee: marquee 35s linear infinite;
+  --animate-spin-slow: spinClockwise 4.5s linear infinite;
+  --animate-spin-reverse-slow: spinCounter 6s linear infinite;
 
   @keyframes fadeIn {
     from { opacity: 0; }
@@ -101,6 +103,16 @@
   @keyframes marquee {
     0% { transform: translateX(0%); }
     100% { transform: translateX(-50%); }
+  }
+
+  @keyframes spinClockwise {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes spinCounter {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
   }
 }
 
@@ -299,5 +311,10 @@
 
   .shadow-gold {
     box-shadow: 0 12px 35px -10px rgba(212, 175, 55, 0.3);
+  }
+
+  /* SVG Rotation Origins */
+  .transform-origin-center-svg {
+    transform-origin: 140px 140px;
   }
 }

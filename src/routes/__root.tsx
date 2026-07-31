@@ -7,13 +7,15 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { type ReactNode } from "react";
+import { type ReactNode, useState, useEffect } from "react";
+import { AnimatePresence } from "motion/react";
 
 import appCss from "../styles.css?url";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { ScrollProgress, FloatingActions, LuxCursor } from "@/components/site/Chrome";
 import { BRAND } from "@/lib/site";
+import { Preloader } from "@/components/site/Preloader";
 
 function NotFoundComponent() {
   return (
@@ -162,9 +164,46 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const [loading, setLoading] = useState(true);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const startTime = Date.now();
+    const duration = 2000; // 2 seconds
+
+    const updateProgress = () => {
+      const elapsed = Date.now() - startTime;
+      const pct = Math.min((elapsed / duration) * 100, 100);
+      setProgress(pct);
+
+      if (elapsed < duration) {
+        requestAnimationFrame(updateProgress);
+      } else {
+        setTimeout(() => {
+          setLoading(false);
+        }, 300);
+      }
+    };
+
+    requestAnimationFrame(updateProgress);
+  }, []);
+
+  useEffect(() => {
+    if (loading) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [loading]);
 
   return (
     <QueryClientProvider client={queryClient}>
+      <AnimatePresence mode="wait">
+        {loading && <Preloader progress={progress} />}
+      </AnimatePresence>
       <ScrollProgress />
       <LuxCursor />
       <SiteHeader />
