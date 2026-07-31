@@ -16,7 +16,7 @@ export const BRAND = {
   hours: "Open 7 Working Days · 7:30 AM – 10:00 PM",
   social: {
     facebook: "https://www.facebook.com/share/1Eg3REgEZq/",
-    instagram: "https://www.instagram.com/rr_haven_gardenblr/?utm_source=qr&r=nametag",
+    instagram: "https://www.instagram.com/rr__heaven_gardenblr?igsh=MTcwZ3BqNGc1MTMybw%3D%3D",
     linkedin: "https://www.linkedin.com/in/naveen-kumar-18a01a241?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   },
 };
